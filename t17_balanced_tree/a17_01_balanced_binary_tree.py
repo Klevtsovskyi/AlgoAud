@@ -69,7 +69,7 @@ class SearchTree:
             if right_height is False:
                 return False # Якщо праве піддерево незбалансоване, повертаємо False
             if abs(left_height - right_height) > 1:
-                return False # Якщо різниця висот більше нуля, повертаємо False
+                return False # Якщо модуль різниці висот більше одиниці, повертаємо False
             return max(left_height, right_height) + 1
         return 1 if _balanced(self) else 0
 
