@@ -33,7 +33,6 @@ class SearchTree:
     def get_key(self): return self.key
     def has_left(self): return self.left is not None
     def has_right(self): return self.right is not None
-    def has_no_children(self): return not (self.has_left() or self.has_right())
     def get_left(self): return self.left
     def get_right(self): return self.right
     def set_left(self, key): self.left = SearchTree(key)
