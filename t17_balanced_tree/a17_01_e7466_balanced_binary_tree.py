@@ -1,4 +1,4 @@
-''' a17_01_(7466)_balanced_binary_tree.py
+''' a17_01_e7466_balanced_binary_tree.py
 
 https://www.e-olymp.com/uk/problems/7466
 
