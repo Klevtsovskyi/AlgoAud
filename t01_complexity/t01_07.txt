@@ -1,0 +1,23 @@
+t01.07
+
+a) T(n) = aT(n-1) + O(1) <=  a(aT(n-2) + C) + C <=
+        <= a^2 T(n-2) + a*C + C <=
+        <= a^n T(0) + C * sum_(i=1)^(n) a^(i-1) =
+        <= a^n * C1 + C * (1 - a^n) / (1 - a) =
+        =  O(a^n) + O(a^(n-1)) = O(a^n)
+
+
+(1-a^n) / (1-a) <= c a^(n-1)
+(1-a^n) <= c a^(n-1) (1-a)
+0 <= a^n - c a^n + c a^(n-1) - 1
+c = 1: 0 <= a^(n-1) - 1
+
+
+d) T(n) = | n = a^k | = aT(a^(k-1)) + O(a^k) =
+        = a^2 T(a^(k-2)) + a * O(a^(k-1)) + O(a^k) =
+        = a^2 T(a^(k-2)) + O(a^k) + O(a^k) =
+        = a^k T(1) + sum_(i=1)^(k) O(a^k) =
+        = a^(k+1) T(0) + a^k * O(1) + k * O(a^k) =
+        = O(a^(k+1)) + O(a^k) + O(k * a^k) =
+        = O(k * a^k) = O(log_a(n) * n)
+
