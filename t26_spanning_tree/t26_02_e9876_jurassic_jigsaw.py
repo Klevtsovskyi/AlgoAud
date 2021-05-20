@@ -257,8 +257,8 @@ def prim(matrix, n):
         total_weight += distances[i]
         tree.append((sources[i], i))
         for j in range(n):
-            if j in pq and distances[j] > graph[i][j]:
-                distances[j] = graph[i][j]
+            if j in pq and distances[j] > matrix[i][j]:
+                distances[j] = matrix[i][j]
                 pq.updatePriority(j, distances[j])
                 sources[j] = i
     return total_weight, tree[1:]
