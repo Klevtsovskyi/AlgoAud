@@ -1,0 +1,3 @@
+log_10 (n) = log_{e^a} (n) = 1/a * ln(n)
+
+log(n + 1) = log(n * (1 + 1/n)) = log(n) + log(1 + 1/n)
