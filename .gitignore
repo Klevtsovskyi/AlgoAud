@@ -1,3 +1,4 @@
 .idea
 _a
 example.py
+*.pyc
