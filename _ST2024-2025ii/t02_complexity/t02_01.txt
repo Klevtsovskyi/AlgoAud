@@ -1,0 +1,25 @@
+f = O(g) <=> Exists C > 0, Exists n0 > 0: Forall n >= n0: f <= Cg
+
+a) f(n) = 3n^2 - n + 4
+
+3n^2 - n + 4 <= C n^2
+C = 4
+3n^2 - n + 4 <= 4 n^2
+4 <= n^2 + n -> 0 <= n(n+1) - 4
+n0 = 2
+
+Forall n >= n0: 3n^2 - n + 4 <= C n^2
+-> f = O(n^2)
+
+
+b) f(n) = 3n^2 - n + 4
+
+3n^2 - n + 4 >= C n^2
+C = 2
+3n^2 - n + 4 >= 2 n^2
+n^2 - n + 4 >= 0
+n(n - 1) + 4 >= 0
+n0 = 1
+
+Forall n >= n0: 3n^2 - n + 4 >= C n^2
+-> f = Omega(n^2)
