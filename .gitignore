@@ -1,4 +1,5 @@
 .idea
 _a
 example.py
+input.txt
 *.pyc
