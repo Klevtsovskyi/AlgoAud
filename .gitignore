@@ -1,5 +1,5 @@
 .idea
 _a
-example.py
-input.txt
+/example.py
+/input.txt
 *.pyc
