@@ -63,7 +63,7 @@ def set(key: int, value: str) -> None:
         if keys[i] == key:
             values[i] = value
             return
-        if keys[i] is DELETED:
+        if j == -1 and keys[i] is DELETED:
             j = i
         i = (i + 1) % size
 
