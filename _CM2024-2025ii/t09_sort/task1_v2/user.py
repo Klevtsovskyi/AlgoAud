@@ -14,25 +14,26 @@ def sort(array):
     """ Сортування масиву
     :param array: Вхідний масив даних, що треба відсортувати.
     """
-    if len(array) <= 1:
+    _sort(array, 0, len(array) - 1)
+
+def _sort(array, a, b):
+    if a == b:
         return
 
-    # print(f"Sorting: {array}")
-    m = len(array) // 2
-    left = array[:m]
-    right = array[m:]
-    # print(f"Splitting: {left} {right}")
-    sort(left)
-    sort(right)
+    m = a + (b - a) // 2
+    _sort(array, a, m)
+    _sort(array, m + 1, b)
 
-    # print(f"Merging: {left} {right}")
-    i = j = k = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
+    left = array[a: m + 1]
+    i = 0
+    j = m + 1
+    k = a
+    while i < len(left) and j <= b:
+        if left[i] < array[j]:
             array[k] = left[i]
             i += 1
         else:
-            array[k] = right[j]
+            array[k] = array[j]
             j += 1
         k += 1
 
@@ -40,12 +41,6 @@ def sort(array):
         array[k] = left[i]
         i += 1
         k += 1
-
-    while j < len(right):
-        array[k] = right[j]
-        j += 1
-        k += 1
-    # print(f"Merged: {array}")
 
 
 if __name__ == '__main__':
