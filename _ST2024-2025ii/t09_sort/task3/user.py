@@ -78,7 +78,35 @@ def merge_sort(array):
     :param array: Масив (список однотипових елементів)
     :return: None
     """
-    pass
+    if len(array) == 1:
+        return
+    # print(f"Sorting {array}")
+    m = len(array) // 2
+    left = array[:m]
+    right = array[m:]
+    # print(f"Splitting: {left} {right}")
+    merge_sort(left)
+    merge_sort(right)
+    # print(f"Merging: {left} {right}")
+    i = j = k = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            array[k] = left[i]
+            i += 1
+        else:
+            array[k] = right[j]
+            j += 1
+        k += 1
+
+    while i < len(left):
+        array[k] = left[i]
+        i += 1
+        k += 1
+
+    while j < len(right):
+        array[k] = right[j]
+        j += 1
+        k += 1
 
 
 def quick_sort(array):
@@ -87,5 +115,30 @@ def quick_sort(array):
         :param array: Масив (список однотипових елементів)
         :return: None
         """
-    pass
+    _quick_sort(array, 0, len(array) - 1)
+
+
+def _quick_sort(array, a, b):
+    if a >= b:
+        return
+
+    pivot = array[a + (b - a + 1) // 2]
+    left = a
+    right = b
+    # print(array[a: b + 1], a, b, "pivot:", pivot)
+    while True:
+        while array[left] < pivot:
+            left += 1
+        while array[right] > pivot:
+            right -= 1
+
+        if left >= right:
+            break
+
+        array[left], array[right] = array[right], array[left]
+        left += 1
+        right -= 1
+    # print(array[a: right + 1], array[right + 1: b + 1])
+    _quick_sort(array, a, left - 1)
+    _quick_sort(array, left, b)
 
