@@ -3,3 +3,4 @@ _a
 /example.py
 /input.txt
 *.pyc
+.DS_Store
