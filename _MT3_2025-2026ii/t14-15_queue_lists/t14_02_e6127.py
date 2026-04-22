@@ -16,15 +16,27 @@ class Queue:
         return self._front is None
 
     def push(self, item):
-        ...
+        node = Node(item)
+        if self.empty():
+            self._front = node
+        else:
+            self._back.next = node
+        self._back = node
+        self._size += 1
+        return "ok"
 
     def pop(self):
-        ...
+        if self.empty():
+            return "error"
+        item = self._front.item
+        self._front = self._front.next
+        self._size -= 1
+        return item
 
     def front(self):
         if self.empty():
             return "error"
-
+        return self._front.item
 
     def size(self):
         return self._size
